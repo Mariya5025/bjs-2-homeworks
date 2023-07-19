@@ -9,3 +9,4 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   
 }
 git add %file-path%
+git push -u origin main
