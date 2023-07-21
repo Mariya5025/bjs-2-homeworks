@@ -14,6 +14,7 @@ function solveEquation(a, b, c) {
      arr.push(oneroot);
      arr.push(tworoot);     
   }
-  return (arr);
+  return arr;
+}
   git add %file-path%
 git push -u origin main
