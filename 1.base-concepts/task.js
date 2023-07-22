@@ -29,10 +29,8 @@ let loanBody = amount - contribution;
   let monthlyPayment = loanBody * (percent + (percent / ((Math.pow((1 + percent), countMonths)) - 1)));
   let Amountofdebt = monthlyPayment * countMonths;
 
-  Amountofdebt = num (Amountofdebt.toFixed(2));
+  Amountofdebt = Number (Amountofdebt.toFixed(2));
 
   return Amountofdebt;
 }
-git add git add ./1.base-concepts/task.js
-git commit -m "descriptive commit message"
-git push -u origin main
+ 
