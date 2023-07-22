@@ -33,4 +33,6 @@ let loanBody = amount - contribution;
 
   return Amountofdebt;
 }
-
+git add git add ./1.base-concepts/task.js
+git commit -m "descriptive commit message"
+git push -u origin main
