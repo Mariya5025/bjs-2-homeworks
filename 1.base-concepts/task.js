@@ -16,5 +16,4 @@ function solveEquation(a, b, c) {
   }
   return arr;
 }
-  git add %file-path%
-git push -u origin main
+   
