@@ -3,9 +3,12 @@ function compareArrays(arr1, arr2) {
 }
 
 
-function advancedFilter(arr) {
-  return arr.filter(item => item > 0 && item % 3 === 0).map(item => item *10);
-}
+
+function getUsersNamesInAgeRange(users, gender) {
+  let mas = users.filter(item => item.gender === gender).map(item => item.age);
+  let res = mas.reduce((sum, age) => sum + age, 0);
+  return (mas.length > 0) ? res / mas.length : 0;
+  }
 
 
  
