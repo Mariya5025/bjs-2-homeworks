@@ -46,5 +46,4 @@ function getTriangle(aSide, bSide, cSide) {
             }
         });
     }
-}
-console.log(getTriangle(1, 10, 3));
+ 
