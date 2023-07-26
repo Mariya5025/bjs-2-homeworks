@@ -13,8 +13,6 @@ function validateCount (unParseNumber) {
     }
 }
 
- 
-
 class Triangle {
     constructor(a, b, c) {
         if (a + b < c || a + c < b || b + c < a) {
@@ -24,15 +22,19 @@ class Triangle {
         this.b = b;
         this.c = c;
     }
+
     getPerimeter() {
         return this.a + this.b + this.c;
     }
+
     getArea() {
         let halfPerimeter = this.getPerimeter() / 2;
         return Number(Math.sqrt(halfPerimeter * (halfPerimeter - this.a) * (halfPerimeter - this.b) * (halfPerimeter - this.c)).toFixed(3));
     }
 }
+
 function getTriangle(aSide, bSide, cSide) {
+    
     
     try {
         return new Triangle(aSide, bSide, cSide);
@@ -41,9 +43,14 @@ function getTriangle(aSide, bSide, cSide) {
             getPerimeter() {
                 return "Ошибка! Такой треугольник не существует";
             },
+
             getArea() {
                 return "Ошибка! Такой треугольник не существует";
             }
         });
     }
+}
+
+console.log(getTriangle(1, 10, 3)); 
+
  
