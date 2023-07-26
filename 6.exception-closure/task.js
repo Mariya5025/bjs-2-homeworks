@@ -1,5 +1,5 @@
 ﻿function parseCount(parseNumber) {
-    let number = Number.parseInt(parseNumber, 10);
+    let number = Number.parseFloat (parseNumber, 10);
     if (isNaN(number)) {
         throw new Error("Невалидное значение");
     }
