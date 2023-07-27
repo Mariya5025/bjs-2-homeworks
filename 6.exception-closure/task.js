@@ -1,13 +1,14 @@
-﻿function parseCount(parseNumber) {
-    let number = Number.parseFloat (parseNumber, 10);
-    if (isNaN(number)) {
+ ﻿function parseCount(value) {
+    let parceFunction = Number.parseFloat(value);
+    if(isNaN(parceFunction)) {
         throw new Error("Невалидное значение");
     }
-    return number;
+    return parceFunction;
 }
-function validateCount (unParseNumber) {
+
+function validateCount(value) {
     try {
-        return parseCount(unParseNumber);
+        return parseCount(value)
     } catch (error) {
         return error;
     }
@@ -15,42 +16,35 @@ function validateCount (unParseNumber) {
 
 class Triangle {
     constructor(a, b, c) {
-        if (a + b < c || a + c < b || b + c < a) {
-            throw new Error("Треугольник с такими сторонами не существует!");
-        }
         this.a = a;
         this.b = b;
         this.c = c;
+        if(a + b < c || a + c < b || b + c < a) {
+            throw new Error("Треугольник с такими сторонами не существует");
+        }
     }
 
-    getPerimeter() {
+    get perimeter() {
         return this.a + this.b + this.c;
     }
 
-    getArea() {
-        let halfPerimeter = this.getPerimeter() / 2;
-        return Number(Math.sqrt(halfPerimeter * (halfPerimeter - this.a) * (halfPerimeter - this.b) * (halfPerimeter - this.c)).toFixed(3));
+    get area() {
+        let p = this.perimeter / 2;
+        return Number((Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c))).toFixed(3));
     }
 }
 
-function getTriangle(aSide, bSide, cSide) {
-    
-    
+function getTriangle(a, b, c) {
     try {
-        return new Triangle(aSide, bSide, cSide);
-    } catch (error) {
-        return  new Object({
-            getPerimeter() {
-                return "Ошибка! Такой треугольник не существует";
+        return new Triangle(a, b, c);
+    } catch(error) {
+        return {
+            get area() {
+                return "Ошибка! Треугольник не существует";
             },
-
-            getArea() {
-                return "Ошибка! Такой треугольник не существует";
+            get perimeter() {
+                return "Ошибка! Треугольник не существует";
             }
-        });
+        };
     }
 }
-
-console.log(getTriangle(1, 10, 3)); 
-
- 
