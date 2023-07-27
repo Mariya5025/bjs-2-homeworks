@@ -6,6 +6,13 @@
     return parceFunction;
 }
 
+function validateCount(value) {
+    try {
+        return parseCount(value)
+    } catch (error) {
+        return error;
+    }
+}
 
 class Triangle {
     constructor(a, b, c) {
@@ -13,7 +20,7 @@ class Triangle {
         this.b = b;
         this.c = c;
         if(a + b < c || a + c < b || b + c < a) {
-          
+            throw new Error("Треугольник с такими сторонами не существует");
         }
     }
 
@@ -27,4 +34,18 @@ class Triangle {
     }
 }
 
- 
+function getTriangle(a, b, c) {
+    try {
+        return new Triangle(a, b, c);
+    } catch(error) {
+        return {
+            get area() {
+                return "Ошибка! Треугольник не существует";
+            },
+            get perimeter() {
+                return "Ошибка! Треугольник не существует";
+            }
+        };
+    }
+}
+         
