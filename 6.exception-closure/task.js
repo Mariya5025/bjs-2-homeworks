@@ -6,13 +6,6 @@
     return parceFunction;
 }
 
-function validateCount(value) {
-    try {
-        return parseCount(value)
-    } catch (error) {
-        return error;
-    }
-}
 
 class Triangle {
     constructor(a, b, c) {
