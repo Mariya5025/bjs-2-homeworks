@@ -28,7 +28,7 @@ function debounceDecoratorNew(func, delay) {
             wrapper.count++;
         }
 
-        if(timeoutId) {  //Повторил код лекции 
+        if(timeoutId) {  
             clearTimeout(timeoutId);
         }
 
